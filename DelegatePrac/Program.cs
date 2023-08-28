@@ -41,7 +41,15 @@ namespace DelegatePrac
                 return x.Price.CompareTo(y.Price);
             });
 
-         
+            //3. 람다를 활용한 구현 방법1
+            products.Sort((x, y) => {return x.Price.CompareTo(y.Price)});
+
+            //3. 람다를 활용한 구현 방법2
+            products.Sort((x, y) => x.Price.CompareTo(y.Price));
+
+            products.ForEach(p => {
+                Console.WriteLine(p.Name + " : " + p.Price);
+            });
 
 
             //출력
